@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Campus Portal</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Campus Portal</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="student_dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="report_lost_item.html"><i class="fas fa-box-open"></i> Lost & Found</a></li>
+                <li><a href="submit_complaint.html"><i class="fas fa-exclamation-circle"></i> Complaints</a></li>
+                <li class="active"><a href="#"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <nav class="top-navbar">
+                <div style="display: flex; align-items: center;">
+                    <div class="menu-toggle" onclick="toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="user-info">
+                        <img src="https://ui-avatars.com/api/?name=Student+User&background=4CAF50&color=fff" alt="User">
+                        <span>Student Name</span>
+                    </div>
+                </div>
+                <button class="logout-btn" onclick="window.location.href='index.html'">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </button>
+            </nav>
+
+            <header>
+                <h2><i class="fas fa-calendar-alt" style="color: #4CAF50; margin-right: 10px;"></i> Upcoming Events</h2>
+            </header>
+
+            <div class="events-container">
+                <!-- Featured Event Banner -->
+                <div class="event-banner">
+                    <div class="banner-content">
+                        <h2>Community Cleanup</h2>
+                        <p>Saturday, 22nd June</p>
+                        <span class="badge-white">City Park</span>
+                    </div>
+                </div>
+
+                <!-- Events Grid -->
+                <div class="events-grid">
+                    <!-- Event 1 -->
+                    <div class="card event-card">
+                        <div class="event-img"
+                            style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=500&auto=format&fit=crop');">
+                        </div>
+                        <div class="event-details">
+                            <h3>Tech Workshop</h3>
+                            <p class="event-date">June 15</p>
+                            <button class="btn btn-green btn-sm" style="width: 100%;">Register</button>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="card event-card">
+                        <div class="event-img"
+                            style="background-image: url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=500&auto=format&fit=crop');">
+                        </div>
+                        <div class="event-details">
+                            <h3>Health Camp</h3>
+                            <p class="event-date">July 5</p>
+                            <button class="btn btn-green btn-sm" style="width: 100%;">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.querySelector('.sidebar-overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

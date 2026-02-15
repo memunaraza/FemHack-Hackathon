@@ -12,9 +12,10 @@
 </head>
 
 <body>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
     <div class="dashboard-container">
         <!-- Sidebar -->
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <h3>Campus Portal</h3>
             </div>
@@ -30,9 +31,14 @@
         <!-- Main Content -->
         <div class="main-content">
             <nav class="top-navbar">
-                <div class="user-info">
-                    <img src="https://ui-avatars.com/api/?name=Student+User&background=4CAF50&color=fff" alt="User">
-                    <span>Student Name</span>
+                <div style="display: flex; align-items: center;">
+                    <div class="menu-toggle" onclick="toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="user-info">
+                        <img src="https://ui-avatars.com/api/?name=Student+User&background=4CAF50&color=fff" alt="User">
+                        <span>Student Name</span>
+                    </div>
                 </div>
                 <button class="logout-btn" onclick="window.location.href='index.html'">
                     <i class="fas fa-sign-out-alt"></i> Log Out
@@ -119,6 +125,13 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.querySelector('.sidebar-overlay').classList.toggle('active');
+        }
+    </script>
 </body>
 
 </html>
