@@ -1,11 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Saylani Campus Portal Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <h1>hello world</h1>
+    <div class="container">
+        <div class="left-section">
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpIHmaTHfHQ3FVanXIf8PqCvdDVDfO8cy_Dg&s"
+                    alt="Saylani Welfare" class="logo-img">
+            </div>
+
+            <div class="content">
+                <h1>Campus Portal</h1>
+                <p>Manage reports, complaints <br> & events effortlessly in one place.</p>
+            </div>
+
+            <!-- Decorative Wave (SVG) -->
+            <div class="wave-container">
+                <svg viewBox="0 0 500 500" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: none; fill:transparent;">
+                    </path>
+                    <!-- Bottom Light Green Swoosh -->
+                    <path d="M0,500 L0,350 C150,350 300,450 500,400 L500,500 Z"
+                        style="stroke: none; fill: #C8E6C9; opacity: 0.7;"></path>
+                    <!-- Main Green Ribbon -->
+                    <path d="M0,500 L0,420 C100,420 250,550 500,450 L500,500 Z"
+                        style="stroke: none; fill: #4CAF50; opacity: 0.2;"></path>
+                    <!-- Corrected Swoosh based on Saylani style -->
+                    <path d="M0,500 L500,500 L500,300 C350,450 150,300 0,450 Z" fill="#A5D6A7" opacity="0.4"></path>
+                    <path d="M0,500 L500,500 L500,400 C300,500 100,350 0,450 Z" fill="#66BB6A" opacity="0.6"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="login-card">
+                <h2>Login</h2>
+                <form>
+                    <div class="input-block">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Typing...">
+                    </div>
+
+                    <div class="input-block">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Typing...">
+                    </div>
+
+                    <div class="role-switch">
+                        <input type="radio" id="student" name="role" checked>
+                        <label for="student" class="switch-label"><i class="fas fa-user-graduate"></i> Student</label>
+
+                        <input type="radio" id="admin" name="role">
+                        <label for="admin" class="switch-label"><i class="fas fa-crown"></i> Admin</label>
+
+                        <div class="slider"></div>
+                    </div>
+
+                    <button type="button" class="login-btn"
+                        onclick="if(document.getElementById('admin').checked){window.location.href='admin_dashboard.html'}else{window.location.href='student_dashboard.html'}">Log
+                        In</button>
+
+                    <div class="divider">or</div>
+
+                    <button type="button" class="google-btn">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdrBBnN60Q-1fFtIbGppVJI_Z_3Jys_R3XHA&s"
+                            alt="Google">
+                        Sign in an account
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

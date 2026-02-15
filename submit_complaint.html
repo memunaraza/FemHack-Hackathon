@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Complaint - Campus Portal</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Campus Portal</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="student_dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="report_lost_item.html"><i class="fas fa-box-open"></i> Lost & Found</a></li>
+                <li class="active"><a href="#"><i class="fas fa-exclamation-circle"></i> Complaints</a></li>
+                <li><a href="#"><i class="fas fa-hands-helping"></i> Volunteers</a></li>
+                <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <nav class="top-navbar">
+                <div class="user-info">
+                    <img src="https://ui-avatars.com/api/?name=Student+User&background=4CAF50&color=fff" alt="User">
+                    <span>Student Name</span>
+                </div>
+                <button class="logout-btn" onclick="window.location.href='index.html'">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </button>
+            </nav>
+
+            <header>
+                <h2><i class="fas fa-exclamation-circle" style="color: #4CAF50; margin-right: 10px;"></i> Submit
+                    Complaint</h2>
+            </header>
+
+            <div class="form-container">
+                <div class="card form-card">
+                    <form>
+                        <div class="form-group">
+                            <label>Complaint Title</label>
+                            <input type="text" placeholder="e.g. Wi-Fi Not Working" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select class="form-control">
+                                <option>Select Category</option>
+                                <option>Facilities</option>
+                                <option>Academic</option>
+                                <option>IT/Technical</option>
+                                <option>Security</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea rows="4" placeholder="Describe the issue in detail..."
+                                class="form-control"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Location</label>
+                            <select class="form-control">
+                                <option>Select Location</option>
+                                <option>Department Block A</option>
+                                <option>Library</option>
+                                <option>Cafeteria</option>
+                                <option>City Park</option>
+                                <option>Transport</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Urgency</label>
+                            <div class="urgency-selector">
+                                <label class="urgency-option">
+                                    <input type="radio" name="urgency" value="low" class="hidden-radio">
+                                    <span class="dot low"></span> Low
+                                </label>
+                                <label class="urgency-option">
+                                    <input type="radio" name="urgency" value="medium" class="hidden-radio">
+                                    <span class="dot medium"></span> Medium
+                                </label>
+                                <label class="urgency-option">
+                                    <input type="radio" name="urgency" value="high" class="hidden-radio">
+                                    <span class="dot high"></span> High
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-blue-block">Submit Complaint</button>
+                    </form>
+                </div>
+
+                <!-- My Complaints Table -->
+                <div class="my-complaints-section" style="margin-top: 40px;">
+                    <div class="section-header"
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="color: #333; font-size: 1.2rem;">My Complaints</h3>
+                        <div class="filters" style="font-size: 0.9rem; color: #666;">
+                            Status: <span style="font-weight: 600; color: #333;">All</span> | Category: <span
+                                style="font-weight: 600; color: #333;">All</span>
+                        </div>
+                    </div>
+
+                    <div class="card table-card">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Complaint</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>503</td>
+                                    <td>Wi-Fi Not Working</td>
+                                    <td><i class="fas fa-map-marker-alt" style="color: #666; margin-right: 5px;"></i>
+                                        Department</td>
+                                    <td><span class="badge badge-warning">Pending</span></td>
+                                    <td><i class="fas fa-ellipsis-h" style="color: #999; cursor: pointer;"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>501</td>
+                                    <td>Leaky Pipe</td>
+                                    <td><i class="fas fa-map-marker-alt" style="color: #666; margin-right: 5px;"></i>
+                                        City Park</td>
+                                    <td><span class="badge badge-success">Resolved</span></td>
+                                    <td><i class="fas fa-ellipsis-h" style="color: #999; cursor: pointer;"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

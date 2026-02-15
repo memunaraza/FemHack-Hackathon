@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Campus Portal</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Campus Portal</h3>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-users-cog"></i> Users</a></li>
+                <li><a href="#"><i class="fas fa-exclamation-triangle"></i> Complaints</a></li>
+                <li><a href="#"><i class="fas fa-box-open"></i> Lost Items</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i> Events</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <nav class="top-navbar">
+                <div class="user-info">
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=2E7D32&color=fff" alt="Admin">
+                    <span>Admin User</span>
+                </div>
+                <button class="logout-btn" onclick="window.location.href='index.html'">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </button>
+            </nav>
+
+            <header>
+                <h2>Admin Dashboard</h2>
+            </header>
+
+            <div class="dashboard-grid-layout">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="card stat-card">
+                            <div class="icon-bg green-bg"><i class="fas fa-users"></i></div>
+                            <div class="stat-info">
+                                <p>Total Users</p>
+                                <h3>540</h3>
+                            </div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="icon-bg red-bg"><i class="fas fa-bell"></i></div>
+                            <div class="stat-info">
+                                <p>Open Complaints</p>
+                                <h3>12</h3>
+                            </div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="icon-bg blue-bg"><i class="fas fa-briefcase"></i></div>
+                            <div class="stat-info">
+                                <p>Lost Items Pending</p>
+                                <h3>6</h3>
+                            </div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="icon-bg yellow-bg"><i class="fas fa-user-check"></i></div>
+                            <div class="stat-info">
+                                <p>Active Volunteers</p>
+                                <h3>24</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Complaints Management Table -->
+                    <div class="card table-card">
+                        <h3>Complaints Management</h3>
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Item / Subject</th>
+                                    <th>Category</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>506</td>
+                                    <td>Bus mishap</td>
+                                    <td>Complaints</td>
+                                    <td><span class="badge badge-success">Resolved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>508</td>
+                                    <td>Exam Noise</td>
+                                    <td>Academic</td>
+                                    <td><span class="badge badge-warning">In Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td>505</td>
+                                    <td>Water Facility</td>
+                                    <td>Facilities</td>
+                                    <td><span class="badge badge-primary">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>503</td>
+                                    <td>Laptop Charger</td>
+                                    <td>Lost & Found</td>
+                                    <td><span class="badge badge-success">Active</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Right Column: Notifications -->
+                <div class="right-column">
+                    <div class="notification-panel">
+                        <div class="panel-header">
+                            <h3><i class="fas fa-envelope"></i> Notifications</h3>
+                            <i class="fas fa-pen-square"></i>
+                        </div>
+                        <div class="notification-list">
+                            <div class="notif-item">
+                                <div class="notif-icon brown"><i class="fas fa-gavel"></i></div>
+                                <div class="notif-info">
+                                    <h4>Complaint Marked as Resolved</h4>
+                                    <span class="time">43m ago</span>
+                                </div>
+                            </div>
+                            <div class="notif-item">
+                                <div class="notif-icon blue"><i class="fas fa-laptop"></i></div>
+                                <div class="notif-info">
+                                    <h4>Laptop Found! Matches with Your Report!</h4>
+                                    <span class="time">45m ago</span>
+                                </div>
+                            </div>
+                            <div class="notif-item">
+                                <div class="notif-icon green"><i class="fas fa-calendar-day"></i></div>
+                                <div class="notif-info">
+                                    <h4>Reminder: Event Tomorrow</h4>
+                                    <span class="time">48m ago</span>
+                                </div>
+                            </div>
+                            <div class="notif-item">
+                                <div class="notif-icon blue-light"><i class="fas fa-wrench"></i></div>
+                                <div class="notif-info">
+                                    <h4>New Request: Lab Equipment</h4>
+                                    <span class="time">1hr ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

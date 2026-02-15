@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Campus Portal</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Campus Portal</h3>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="report_lost_item.html"><i class="fas fa-box-open"></i> Lost & Found</a></li>
+                <li><a href="submit_complaint.html"><i class="fas fa-exclamation-circle"></i> Complaints</a></li>
+                <li><a href="#"><i class="fas fa-hands-helping"></i> Volunteers</a></li>
+                <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <nav class="top-navbar">
+                <div class="user-info">
+                    <img src="https://ui-avatars.com/api/?name=Student+User&background=4CAF50&color=fff" alt="User">
+                    <span>Student Name</span>
+                </div>
+                <button class="logout-btn" onclick="window.location.href='index.html'">
+                    <i class="fas fa-sign-out-alt"></i> Back to Log In
+                </button>
+            </nav>
+
+            <header>
+                <h2>Lost & Found Report</h2>
+            </header>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="card stat-card">
+                    <div class="icon-bg blue-bg"><i class="fas fa-globe"></i></div>
+                    <div class="stat-info">
+                        <p>Total Reports</p>
+                        <h3>128</h3>
+                    </div>
+                </div>
+                <div class="card stat-card">
+                    <div class="icon-bg red-bg"><i class="fas fa-clipboard-list"></i></div>
+                    <div class="stat-info">
+                        <p>Active Complaints</p>
+                        <h3>5</h3>
+                    </div>
+                </div>
+                <div class="card stat-card">
+                    <div class="icon-bg green-bg"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-info">
+                        <p>Items Matched</p>
+                        <h3>12</h3>
+                    </div>
+                </div>
+                <div class="card stat-card">
+                    <div class="icon-bg yellow-bg"><i class="fas fa-calendar-check"></i></div>
+                    <div class="stat-info">
+                        <p>Events Registered</p>
+                        <h3>8</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity & Actions -->
+            <div class="content-grid">
+                <div class="card activity-card">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="icon green"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="details">
+                                <h4>Phone</h4>
+                                <span class="status warning">Pending</span>
+                            </div>
+                            <span class="date"><i class="far fa-calendar-alt"></i> 12 Oct 2024</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="icon green"><i class="fas fa-briefcase"></i></div>
+                            <div class="details">
+                                <h4>Backpack</h4>
+                                <span class="status success">Returned</span>
+                            </div>
+                            <span class="date"><i class="far fa-calendar-alt"></i> 10 Oct 2024</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="icon dark"><i class="fas fa-wallet"></i></div>
+                            <div class="details">
+                                <h4>Wallet</h4>
+                                <span class="status purple">Matching</span>
+                            </div>
+                            <span class="date"><i class="far fa-calendar-alt"></i> 08 Oct 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-green" onclick="window.location.href='report_lost_item.html'"><i
+                        class="fas fa-edit"></i> Report Lost Item</button>
+                <button class="btn btn-dark" onclick="window.location.href='report_lost_item.html'"><i
+                        class="fas fa-file-alt"></i> Submit Complaint</button>
+                <button class="btn btn-orange"><i class="fas fa-calendar-plus"></i> Register for Event</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
