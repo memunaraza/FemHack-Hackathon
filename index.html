@@ -13,6 +13,16 @@
 
 <body>
     <div class="container">
+        <!-- Decorative Wave (SVG) - Moved to Background -->
+        <div class="wave-container">
+            <svg viewBox="0 0 500 500" preserveAspectRatio="none">
+                <!-- Subtle background curves to match reference -->
+                <path d="M0,500 L500,500 L500,200 C300,400 100,350 0,250 Z" fill="#E8F5E9" opacity="0.6"></path>
+                <path d="M0,500 L500,500 L500,350 C300,550 100,450 0,400 Z" fill="#A5D6A7" opacity="0.5"></path>
+                <path d="M0,500 L500,500 L500,420 C250,550 50,480 0,450 Z" fill="#66BB6A" opacity="0.6"></path>
+            </svg>
+        </div>
+
         <div class="left-section">
             <div class="logo">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpIHmaTHfHQ3FVanXIf8PqCvdDVDfO8cy_Dg&s"
@@ -21,48 +31,30 @@
 
             <div class="content">
                 <h1>Campus Portal</h1>
-                <p>Manage reports, complaints <br> & events effortlessly in one place.</p>
-            </div>
-
-            <!-- Decorative Wave (SVG) -->
-            <div class="wave-container">
-                <svg viewBox="0 0 500 500" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-                    <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: none; fill:transparent;">
-                    </path>
-                    <!-- Bottom Light Green Swoosh -->
-                    <path d="M0,500 L0,350 C150,350 300,450 500,400 L500,500 Z"
-                        style="stroke: none; fill: #C8E6C9; opacity: 0.7;"></path>
-                    <!-- Main Green Ribbon -->
-                    <path d="M0,500 L0,420 C100,420 250,550 500,450 L500,500 Z"
-                        style="stroke: none; fill: #4CAF50; opacity: 0.2;"></path>
-                    <!-- Corrected Swoosh based on Saylani style -->
-                    <path d="M0,500 L500,500 L500,300 C350,450 150,300 0,450 Z" fill="#A5D6A7" opacity="0.4"></path>
-                    <path d="M0,500 L500,500 L500,400 C300,500 100,350 0,450 Z" fill="#66BB6A" opacity="0.6"></path>
-                </svg>
+                <p>Manage reports, complaints <br> & events in one place.</p>
             </div>
         </div>
 
         <div class="right-section">
             <div class="login-card">
-                <h2>Welcome Back</h2>
-                <p class="subtitle">Enter your credentials to access the portal.</p>
+                <h2>Login</h2>
                 <form>
                     <div class="input-block">
                         <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Typing...">
+                        <input type="email" id="email" placeholder="Enter ypur email" required>
                     </div>
 
                     <div class="input-block">
                         <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Typing...">
+                        <input type="password" id="password" placeholder="Enter ypur password" required>
                     </div>
 
                     <div class="role-switch">
                         <input type="radio" id="student" name="role" checked>
-                        <label for="student" class="switch-label"><i class="fas fa-user-graduate"></i> Student</label>
+                        <label for="student" class="switch-label">Student</label>
 
                         <input type="radio" id="admin" name="role">
-                        <label for="admin" class="switch-label"><i class="fas fa-crown"></i> Admin</label>
+                        <label for="admin" class="switch-label">Admin</label>
 
                         <div class="slider"></div>
                     </div>

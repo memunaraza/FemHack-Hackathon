@@ -11,329 +11,264 @@ body,
 html {
     height: 100%;
     width: 100%;
-    background-color: #fff;
-}
-
-.container {
+    background-color: #F0F2F5;
+    /* Light Grey Background */
     display: flex;
-    height: 100vh;
-    width: 100%;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
-/* --- Left Section --- */
-.left-section {
-    width: 50%;
-    background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
-    /* Subtle Gradient */
+/* --- Main Card Container (Now Full Screen) --- */
+.container {
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    overflow: hidden;
     position: relative;
+    max-width: 100%;
+}
+
+/* --- Left Section (Info & Waves) --- */
+.left-section {
+    flex: 1.2;
+    /* Slightly wider */
+    position: relative;
+    padding: 60px;
     display: flex;
     flex-direction: column;
-    padding: 80px;
     justify-content: center;
-    color: #333;
-    overflow: hidden;
-    /* Ensure waves don't spill */
+    z-index: 1;
 }
 
-/* Logo Positioning */
+/* Logo */
 .logo {
     position: absolute;
-    top: 60px;
-    left: 80px;
-    z-index: 10;
+    top: 40px;
+    left: 40px;
 }
 
 .logo-img {
-    height: 70px;
-    /* Slightly larger */
-    object-fit: contain;
+    height: 50px;
 }
 
 /* Text Content */
 .content {
-    z-index: 2;
-    margin-top: -60px;
+    margin-top: -40px;
     position: relative;
+    z-index: 2;
 }
 
 .content h1 {
-    font-size: 3.5rem;
-    color: #1B5E20;
-    /* Deep Saylani Green */
-    font-weight: 800;
-    /* Bolder */
-    margin-bottom: 20px;
-    line-height: 1.1;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
 }
 
 .content p {
-    font-size: 1.25rem;
-    color: #455A64;
-    /* Blue-grey */
+    font-size: 1rem;
+    color: #555;
     line-height: 1.6;
-    font-weight: 500;
-    max-width: 85%;
+    max-width: 80%;
 }
 
-/* Wave Decoration */
+/* Wave Decoration (Custom SVG needed for exact match, using approximations) */
 .wave-container {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 60%;
-    z-index: 1;
+    height: 100%;
+    z-index: 0;
     pointer-events: none;
+    overflow: hidden;
 }
 
 .wave-container svg {
-    width: 100%;
-    height: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
+    width: 150%;
+    /* stretch to fit curve */
+    height: auto;
 }
 
 
-/* --- Right Section --- */
+/* --- Right Section (Floating Card Container) --- */
 .right-section {
-    width: 50%;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
-    padding: 40px;
+    background: transparent;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
 }
 
+/* --- The Floating Login Card --- */
 .login-card {
     width: 100%;
-    max-width: 420px;
-    /* Slightly wider */
-    background: #fff;
-    padding: 40px;
-    /* More padding inside */
-    border-radius: 20px;
-    /* Smoother corners */
-    /* Soft, premium shadow */
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    max-width: 340px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    /* Distinct shadow for floating effect */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    border: 1px solid #f0f0f0;
+}
+
+.login-card:hover {
+    transform: none;
+    /* remove lift on this specific design as it's static card style */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
 }
 
 .login-card h2 {
-    font-size: 2.2rem;
-    color: #2E7D32;
-    /* Primary Brand Color */
-    margin-bottom: 10px;
-    font-weight: 700;
-    text-align: center;
-}
-
-.login-card .subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: 40px;
-    font-size: 0.95rem;
-}
-
-.input-block {
+    font-size: 1.5rem;
+    color: #333;
     margin-bottom: 25px;
-    position: relative;
+    font-weight: 600;
+    text-align: left;
+    /* Aligned left as per image */
+}
+
+/* Inputs */
+.input-block {
+    margin-bottom: 20px;
 }
 
 .input-block label {
-    display: block;
-    font-size: 0.9rem;
-    color: #37474F;
-    margin-bottom: 8px;
-    font-weight: 600;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: 500;
 }
 
 .input-block input {
     width: 100%;
-    padding: 16px 20px;
-    border: 2px solid #F1F5F9;
-    /* Subtler border initially */
-    border-radius: 12px;
-    font-size: 1rem;
-    color: #333;
-    background-color: #F8FAFC;
-    /* Light background for inputs */
-    transition: all 0.3s ease;
-    outline: none;
+    padding: 12px 15px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    /* Sqaure-ish */
+    font-size: 0.9rem;
+    background: #fff;
+    transition: all 0.2s;
 }
 
 .input-block input:focus {
-    border-color: #4CAF50;
-    /* Green focus */
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.1);
+    border-color: #4F46E5;
+    /* Blue focus */
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
 }
 
-.input-block input::placeholder {
-    color: #94A3B8;
-}
-
-/* Role Switcher */
+/* Role Switcher (Small & Pill-shaped) */
 .role-switch {
     display: flex;
-    background-color: #F1F5F9;
-    border-radius: 12px;
-    padding: 6px;
-    margin-bottom: 30px;
-    position: relative;
-    cursor: pointer;
-    user-select: none;
-}
-
-.role-switch input[type="radio"] {
-    display: none;
+    background-color: #F5F5F5;
+    border-radius: 6px;
+    padding: 4px;
+    margin-bottom: 20px;
+    justify-content: space-between;
 }
 
 .switch-label {
     flex: 1;
     text-align: center;
-    padding: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #64748B;
-    z-index: 2;
-    transition: all 0.3s;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    padding: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #555;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
 .role-switch input:checked+label {
     background-color: #fff;
-    color: #2E7D32;
-    /* Active Green */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
 }
 
-/* Buttons */
+/* Login Button (Blue) */
 .login-btn {
     width: 100%;
-    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
-    /* Green Gradient */
+    background: #4F46E5;
+    /* Google Blue match */
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    padding: 16px;
+    padding: 12px;
     border: none;
-    border-radius: 12px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 20px rgba(46, 125, 50, 0.2);
+    transition: background 0.2s;
+    margin-bottom: 15px;
+    box-shadow: none;
 }
 
 .login-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(46, 125, 50, 0.3);
+    background: #4338CA;
+    transform: none;
+    box-shadow: none;
 }
 
-.divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #94A3B8;
-    font-size: 0.9rem;
-    margin-bottom: 25px;
-    font-weight: 500;
-}
-
-.divider::before,
-.divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid #E2E8F0;
-}
-
-.divider::before {
-    margin-right: 15px;
-}
-
-.divider::after {
-    margin-left: 15px;
-}
-
+/* Google Button */
 .google-btn {
     width: 100%;
-    background-color: #fff;
-    border: 2px solid #E2E8F0;
-    color: #333;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 14px;
-    border-radius: 12px;
-    cursor: pointer;
+    background: #fff;
+    border: 1px solid #D1D5DB;
+    color: #4B5563;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    transition: all 0.3s;
-}
-
-.google-btn:hover {
-    background-color: #F8FAFC;
-    border-color: #CBD5E1;
+    gap: 10px;
 }
 
 .google-btn img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Hide Divider text visually or style simply */
+.divider {
+    display: none;
 }
 
 /* Responsive */
-@media (max-width: 960px) {
+@media (max-width: 900px) {
     .container {
         flex-direction: column;
         height: auto;
-    }
-
-    .left-section,
-    .right-section {
-        width: 100%;
+        width: 90%;
+        max-width: 450px;
+        padding-bottom: 40px;
     }
 
     .left-section {
-        height: 40vh;
-        /* Shorter on mobile */
-        padding: 40px 20px;
-        align-items: center;
-        text-align: center;
-    }
-
-    .logo {
-        position: static;
-        margin-bottom: 20px;
-    }
-
-    .content {
-        margin-top: 0;
-    }
-
-    .content h1 {
-        font-size: 2.2rem;
-    }
-
-    .content p {
-        font-size: 1rem;
+        display: none;
+        /* Hide info on mobile to focus on login */
     }
 
     .right-section {
-        min-height: 60vh;
-        align-items: center;
         padding: 40px 20px;
     }
 
     .login-card {
-        padding: 30px;
         box-shadow: none;
-        /* Cleaner on mobile */
+        /* Flat on mobile card */
+        border: none;
+        padding: 0;
     }
 }
 
